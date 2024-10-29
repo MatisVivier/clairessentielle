@@ -1,9 +1,6 @@
 <?php
 include 'connexion.php';
-session_start();
-
-// Vérifie si l'utilisateur est connecté et a le rôle d'administrateur
-
+//session_start();
 
 // Vérifie si la requête est de type POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

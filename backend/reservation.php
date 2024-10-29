@@ -26,69 +26,7 @@ unset($_SESSION['reservation_success']);
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/fr.js'></script>
-    <style>
-        /* Mise en page flex pour aligner le calendrier à gauche et les horaires à droite */
-        .reservation-container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Calendrier compact */
-        #calendar {
-            max-width: 600px;
-            margin-right: 30px;
-        }
-
-        /* Section des horaires */
-        #horaires-disponibles {
-            flex-grow: 1;
-            max-width: 400px;
-        }
-
-        /* Style pour les boutons d'horaires */
-        .horaire-btn {
-            padding: 10px 15px;
-            background-color: lightgreen;
-            border: none;
-            margin: 5px;
-            cursor: pointer;
-        }
-
-        /* Mise en forme du formulaire de réservation */
-        #reservation-form {
-            margin-top: 20px;
-        }
-
-        /* Notification */
-        .notification {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            transform: translateY(20px); /* Initialement décalé vers le bas */
-        }
-
-        .notification.show {
-            opacity: 1;
-            transform: translateY(0); /* Animation de montée */
-        }
-
-        .notification.hide {
-            opacity: 0;
-            transform: translateY(20px); /* Animation de descente */
-        }
-
-        /* Centrage des titres */
-        h1, h2 {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="../style/reservation.css">
 </head>
 <body>
 
@@ -160,7 +98,7 @@ unset($_SESSION['reservation_success']);
 
     // Fonction pour charger les horaires disponibles pour une date donnée
     function chargerHorairesDisponibles(date) {
-        fetch('get_horaires.php?date=' + date)
+        fetch('getters/get_horaires.php?date=' + date)
             .then(response => response.json())
             .then(data => {
                 const listeHoraires = document.getElementById('liste-horaires');

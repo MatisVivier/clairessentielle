@@ -1,0 +1,183 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Barre de navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+nav.nav-colored {
+    background-color: #E8AABE;
+}
+
+.nav-links {
+    padding: 10px 0;
+    list-style-type: none;
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f0a500;
+}
+
+.bouton-nav {
+    padding: 10px 20px;
+    background-color: #017679;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.bouton-nav:hover {
+    background-color: #015a5b;
+}
+
+/* Conteneur de réservation */
+.reservation-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto; /* Décalage pour éviter la barre de navigation */
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* Calendrier compact */
+#calendar {
+    max-width: 600px;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Section des horaires */
+#horaires-disponibles {
+    flex-grow: 1;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #A7E0E0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#horaires-disponibles h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.horaire-btn {
+    padding: 10px 15px;
+    background-color: #4AA3A2;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.horaire-btn:hover {
+    background-color: #017679;
+}
+
+/* Mise en forme du formulaire de réservation */
+#reservation-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#reservation-form input[type="text"],
+#reservation-form input[type="email"] {
+    padding: 8px;
+    width: 80%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#reservation-form button {
+    padding: 10px 20px;
+    background-color: #017679;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reservation-form button:hover {
+    background-color: #015a5b;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #CA3C66;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(20px);
+    z-index: 10000;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Centrage des titres */
+h1, h2 {
+    text-align: center;
+}

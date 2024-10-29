@@ -236,7 +236,7 @@ nav.nav-colored {
 }
 
 .profile-section {
-    background-color: #E8AABE;
+    background-color: #E8AABE !important;
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Ombre pour la boîte de texte */
     max-width: 50%; /* Limite la largeur de la boîte de texte */

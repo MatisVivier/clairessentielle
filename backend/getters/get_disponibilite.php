@@ -1,5 +1,5 @@
 <?php
-include 'connexion.php';
+include '../connexion.php';
 
 // Récupérer toutes les dates avec des disponibilités
 $sql = "SELECT DISTINCT date FROM disponibilites WHERE disponible = TRUE";

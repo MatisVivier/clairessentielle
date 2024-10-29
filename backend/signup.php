@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->execute()) {
             echo "Inscription réussie. Vous pouvez maintenant vous connecter.";
         } else {
-            echo "Erreur lors de l'inscription : " . $stmt->error;
+            echo "<p style='color:red;'>Erreur lors de l'inscription : " . $stmt->error . "</p>";
         }
 
         $stmt->close();
@@ -51,5 +51,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
 ?>

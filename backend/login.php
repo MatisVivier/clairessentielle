@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             // Si le mot de passe est incorrect, afficher un message d'erreur
             echo "<p style='color:red;'>Mot de passe incorrect.</p>";
-            header('Location: ../login.html');
         }
     } else {
         // Si aucun utilisateur n'est trouvé, afficher un message d'erreur
@@ -45,4 +44,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->close();
 }
 ?>
-

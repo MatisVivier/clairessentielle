@@ -33,7 +33,7 @@ include_once('backend/update.php');
             <li><a href="backend/mes_reservations.php">Mes réservations</a></li>
             <li><a href="backend/logout.php">Déconnexion</a></li>
         <?php else: ?>
-            <li><a href="login.html">Identification</a></li>
+            <li><a href="frontend/login.html">Identification</a></li>
             <!-- <li><a href="../connexion/signup.php">Inscription</a></li> -->
         <?php endif; ?>
         <li><a href="" id="prendreRDVBtn" class="bouton-nav">Prendre rendez-vous</a></li>
@@ -46,7 +46,7 @@ include_once('backend/update.php');
     <div class="hero-text">
         <h1>Titre Principal</h1>
         <h3>Sous Titre</h3>
-        <a href="" id="heroRDVBtn" class="btn-reservation">Réserver maintenant</a>
+        <a href="backend/reservation.php" id="heroRDVBtn" class="btn-reservation">Réserver maintenant</a>
     </div>
 </div> 
 
