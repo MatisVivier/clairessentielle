@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des Disponibilités</title>
+</head>
+<body>
+
+<h1>Ajouter des créneaux de disponibilité</h1>
+
+<form method="POST" action="backend/admin.php">
+    <label>Date :</label>
+    <input type="date" name="date" required><br>
+
+    <label>Heure de début :</label>
+    <input type="time" name="heure_debut" required><br>
+
+    <label>Heure de fin :</label>
+    <input type="time" name="heure_fin" required><br>
+
+    <button type="submit">Ajouter</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,506 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Barre de navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+}
+
+nav.nav-colored {
+    background-color: #E8AABE;
+}
+
+.nav-links {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style-type: none;
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f0a500;
+}
+
+.bouton-nav {
+    padding: 10px 20px;
+    background-color: #017679;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.bouton-nav:hover {
+    background-color: #015a5b;
+}
+
+/* Réseaux sociaux */
+.social-links {
+    list-style-type: none;
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links li a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #f0a500;
+}
+
+.social-links li a img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Section Hero */
+.hero {
+    background-image: url('../image/fleurs.jpg'); /* Remplace par le chemin vers ton image */
+    height: 100vh; /* Hauteur de 100% de la vue */
+    background-size: cover; /* Couvrir tout l'écran */
+    background-position: center; /* Centrer l'image */
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: white;
+    text-align: left;
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Superposition noire avec opacité de 40% */
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2; /* Le texte doit être au-dessus de l'image de fond */
+    margin-left: 50px; /* Décalage vers la gauche */
+    max-width: 600px; /* Limiter la largeur du bloc de texte */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.hero h3 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+/* Bouton de réservation */
+.btn-reservation {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #017679;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.btn-reservation:hover {
+    background-color: #4AA3A2;
+}
+
+/* Conteneur principal */
+.container {
+    background-color: white;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2; /* S'assurer que le conteneur est au-dessus du contenu */
+}
+
+/* Texte dans le conteneur */
+.container-container {
+    background-color: #A7E0E0;
+    padding: 20px;
+}
+
+.container-container img {
+    padding-right: 1%;
+}
+
+.container-container .titre {
+    margin-top: 20px;
+}
+
+.container-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 22px;
+}
+
+.text-content h1 {
+    margin-bottom: 30px;
+}
+
+.text-content p {
+    padding-bottom: 7%;
+}
+
+.image-content {
+    margin-left: 20px; /* Pour ajouter un espace entre l'image et le texte */
+}
+
+.open-modal-btn img{
+    width: 20px;
+}
+
+.container-container-2 {
+    display: flex; /* Utilise flexbox pour aligner l'image et le texte côte à côte */
+    justify-content: center; /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement l'image et la boîte de texte */
+    background: linear-gradient(#A7E0E0, #4AA3A2); /* Dégradé pour le fond */
+    padding: 50px 0;
+    position: relative;
+}
+
+.profile-image {
+    position: relative;
+    margin-right: -50px; /* Décalage pour que l'image sorte de la boîte */
+    z-index: 10; /* Assure que l'image est devant la boîte */
+}
+
+.profile-image img {
+    width: 450px; /* Taille de l'image */
+    height: 450px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Ombre pour donner du relief */
+}
+
+.profile-section {
+    background-color: #E8AABE;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Ombre pour la boîte de texte */
+    max-width: 50%; /* Limite la largeur de la boîte de texte */
+    height: 425px;
+    margin-left: 30px; /* Laisse de la place à l'image pour qu'elle déborde */
+    position: relative;
+    z-index: 1; /* Garde le texte derrière l'image si elles se chevauchent */
+    margin-top: 5%;
+}
+
+.profile-text {
+    text-align: left; /* Texte aligné à gauche */
+    padding-left: 10px;
+}
+
+.profile-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.container-container-3 {
+    padding: 50px 20px;
+    background-color: #4AA3A2;
+    text-align: center;
+}
+
+.container-container-3 h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}   
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* avis */
+
+.container-container-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#4AA3A2, #017679) ;
+    padding: 50px 0;
+}
+
+.avis-container {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.avis-item {
+    font-size: 20px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.avis-content {
+    opacity: 0; /* Commence invisible */
+    transform: translateX(100%); /* Commence hors de l'écran à droite */
+    transition: transform 1s ease, opacity 1s ease; /* Transition fluide pour l'animation */
+}
+
+.avis-content.slide-in {
+    opacity: 1; /* L'élément devient visible */
+    transform: translateX(0); /* L'élément se déplace vers le centre */
+}
+
+.avis-content.slide-out {
+    opacity: 0; /* L'élément devient invisible */
+    transform: translateX(-100%); /* L'élément glisse vers la gauche */
+}
+
+.avis-titre {
+    font-weight: bold;
+}
+
+.avis-name {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.avis-date {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.avis-commentaire {
+    max-width: 80%; /* Limiter la largeur à 80% du conteneur */
+    word-wrap: break-word; /* Forcer un saut de ligne si le mot est trop long */
+    white-space: normal; /* Autoriser les retours à la ligne */
+    display: inline-block; /* Conserver la largeur définie */
+    margin: 10px 0; /* Espacement autour du commentaire */
+}
+
+.bouton-avis {
+    margin-top: 20px;
+}
+.bouton-avis a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #E8AABE;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Effet de transition */
+}
+
+.bouton-avis a:hover {
+    background-color: #CA3C66; /* Couleur plus foncée au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.bouton-avis a:active {
+    background-color: #003d80; /* Couleur encore plus foncée au clic */
+}
+
+/* Modale */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #CA3C66;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(20px);
+    z-index: 10000;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.footer {
+    background-color: #E8AABE; /* Couleur de fond sombre */
+    color: white; /* Couleur du texte en blanc */
+    padding: 20px 0; /* Espacement vertical */
+    text-align: center; /* Centrer le contenu */
+    font-size: 14px; /* Taille de texte modeste */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px; /* Limite la largeur du contenu */
+    margin: 0 auto; /* Centrer horizontalement */
+    display: flex;
+    flex-direction: column; /* Pour empiler les éléments verticalement sur petit écran */
+    align-items: center;
+}
+
+.footer-links {
+    margin-bottom: 10px; /* Espace entre les liens et le texte de copyright */
+}
+
+.footer-links a {
+    color: white; /* Couleur des liens en blanc */
+    text-decoration: none; /* Enlever le soulignement */
+    margin: 0 15px; /* Espacement entre les liens */
+    font-size: 14px; /* Taille de texte */
+    transition: color 0.3s ease; /* Animation de couleur au survol */
+}
+
+.footer-links a:hover {
+    color: #007BFF; /* Couleur bleue au survol */
+}
+
+.footer-copyright {
+    font-size: 12px; /* Texte plus petit pour le copyright */
+    color: white; /* Couleur gris clair */
+}
+

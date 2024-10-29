@@ -1,0 +1,72 @@
+/* Image de fond qui prend tout l'écran */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../image/fleurs.jpg'); /* Utiliser le bon chemin vers l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Boîte d'inscription centrée */
+.signup-box {
+    background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond blanche avec transparence */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7); /* Ombre subtile */
+    width: 300px;
+    text-align: center;
+}
+
+/* Titre de la page d'inscription */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style pour les champs de saisie */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Bouton d'inscription */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4AA3A2; /* Vert */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #72c8c7; /* Vert plus foncé au survol */
+}
+
+/* Lien pour rediriger vers la connexion */
+a {
+    display: block;
+    margin-top: 10px;
+    color: #4AA3A2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

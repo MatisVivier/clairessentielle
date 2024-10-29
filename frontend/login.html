@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../style/style.css"> <!-- Lien vers le fichier CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet"> <!-- Police Quicksand -->
+</head>
+<body>
+
+<div class="login-box">
+    <h2>S'identifier</h2>
+    <form method="POST" action="../backend/login.php">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <p>Pas encore inscrit ? <a href="../backend/signup.php">Inscrivez-vous ici</a></p>
+    <p><a href="../index.php">Retourner à l'acceuil</a></p>
+</div>
+
+</body>
+</html>
