@@ -23,12 +23,38 @@ unset($_SESSION['reservation_success']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réserver un créneau</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/fr.js'></script>
     <link rel="stylesheet" href="../style/reservation.css">
+    <link rel="stylesheet" href="../style/index.css">
 </head>
 <body>
+
+<nav>
+    <!-- Liens vers les réseaux sociaux à gauche -->
+    <ul class="social-links">
+        <li><a href="https://facebook.com" target="_blank"><img src="../image/facebook.png"></a></li>
+        <li><a href="https://twitter.com" target="_blank"><img src="../image/instagram.webp"></a></li>
+    </ul>
+
+    <!-- Liens de navigation à droite -->
+    <ul class="nav-links">
+        <li><a href="../index.php">Accueil</a></li>
+        <li><a href="../index.php">Contact</a></li>
+        <?php if (isset($_SESSION['username'])): ?>
+            <li><a href="mes_reservations.php">Mes réservations</a></li>
+            <li><a href="logout.php">Déconnexion</a></li>
+        <?php else: ?>
+            <li><a href="../frontend/login.html">Identification</a></li>
+            <!-- <li><a href="../connexion/signup.php">Inscription</a></li> -->
+        <?php endif; ?>
+        <li><a href="reservation.php" id="prendreRDVBtn" class="bouton-nav">Prendre rendez-vous</a></li>
+    </ul>
+
+</nav>
+
 
 <h1>Réserver un créneau</h1>
 
@@ -52,18 +78,17 @@ unset($_SESSION['reservation_success']);
 </div>
 
 <!-- Formulaire de réservation -->
-<div id="reservation-form" style="display: none; text-align: center;">
+<div id="reservation-form">
     <h3>Confirmer la réservation</h3>
     <form id="form-reservation" method="POST" action="reserver.php">
         <input type="hidden" name="disponibilite_id" id="disponibilite_id">
         <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" value="<?php echo htmlspecialchars($username); ?>" readonly><br><br>
+        <input type="text" id="prenom" name="prenom" style="width: 75%" value="<?php echo htmlspecialchars($username); ?>" readonly><br><br>
         <label for="email">Email :</label>
         <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" readonly><br><br>
         <button type="submit">Réserver</button>
     </form>
 </div>
-
 <!-- Section de notification -->
 <div id="notification" class="notification">
     Réservation confirmée avec succès !

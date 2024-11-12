@@ -1,11 +1,10 @@
 <?php
 include 'connexion.php';
-session_start();
 
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     $_SESSION['error'] = "Vous devez être connecté pour laisser un avis.";
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -24,6 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérifier que les données sont bien envoyées
     if (empty($note) || empty($commentaire)) {
         $_SESSION['error'] = "Tous les champs sont obligatoires.";
+        header("Location: ../avis.php");
+        exit();
     } else {
         // Insérer l'avis dans la base de données
         $stmt = $conn->prepare("INSERT INTO avis (user_id, note, commentaire) VALUES (?, ?, ?)");
@@ -39,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['error'] = "Erreur lors de l'enregistrement de l'avis : " . $stmt->error;
         }
 
-        header("Location: avis.php");
+        header("Location: ../avis.php");
         exit();
     }
 }
@@ -66,4 +67,3 @@ $result = $stmt->get_result();
 if ($result === false) {
     die("Erreur lors de l'exécution de la requête : " . $stmt->error);
 }
-?>

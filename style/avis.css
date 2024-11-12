@@ -1,0 +1,147 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #7575d4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-top: 5%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Formulaire d'avis */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #E8AABE;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+form select, 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Messages de succès et d'erreur */
+p {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+p[style*="color: green;"] {
+    color: green;
+    font-weight: bold;
+}
+
+p[style*="color: red;"] {
+    color: red;
+    font-weight: bold;
+}
+
+/* Section des avis */
+/* Conteneur de la grille d'avis */
+.avis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 20px; /* Espacement entre les avis */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrer le conteneur sur la page */
+    padding: 20px;
+}
+
+.avis {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avis strong {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.avis span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.avis small {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.avis p {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Responsive: une seule colonne sur les petits écrans */
+@media (max-width: 768px) {
+    .avis-grid {
+        grid-template-columns: 1fr; /* Une colonne pour les écrans plus petits */
+    }
+}
+
+
+/* Liens de tri */
+p a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #45a049;
+}

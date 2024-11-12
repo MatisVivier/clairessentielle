@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 // Inclure la connexion à la base de données
 include '../connexion.php';
 
@@ -11,7 +13,7 @@ $query = "SELECT avis.note, avis.commentaire, avis.date, users.username
 $result = $conn->query($query);
 
 $avisArray = [];
-if ($result->num_rows > 0) {
+if ($result && $result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $avisArray[] = $row;
     }
@@ -21,6 +23,5 @@ if ($result->num_rows > 0) {
 }
 
 // Retourner les avis sous forme de JSON
-header('Content-Type: application/json');
 echo json_encode($avisArray);
-?>
+exit;

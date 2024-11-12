@@ -29,14 +29,13 @@ include_once('backend/update.php');
         <li><a href="index.php">Accueil</a></li>
         <li><a href="index.php">Contact</a></li>
         <?php if (isset($_SESSION['username'])): ?>
-            <li><a href="#about"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
             <li><a href="backend/mes_reservations.php">Mes réservations</a></li>
             <li><a href="backend/logout.php">Déconnexion</a></li>
         <?php else: ?>
             <li><a href="frontend/login.html">Identification</a></li>
             <!-- <li><a href="../connexion/signup.php">Inscription</a></li> -->
         <?php endif; ?>
-        <li><a href="" id="prendreRDVBtn" class="bouton-nav">Prendre rendez-vous</a></li>
+        <li><a href="backend/reservation.php" id="prendreRDVBtn" class="bouton-nav">Prendre rendez-vous</a></li>
     </ul>
 
 </nav>
@@ -133,20 +132,24 @@ include_once('backend/update.php');
         </div>
     </div>
 
-    <!-- Section des avis -->
     <div class="container-container-4">
-        <div class="avis-container">
-            <div class="avis-item" id="avis-item">
-                <!-- Les avis seront injectés ici par JavaScript -->
-            </div>
-            <div class="bouton-avis">
-                <a href="">Raconter son expèrience</a>
-            </div>
+    <div class="avis-container">
+        <div class="avis-item" id="avis-item">
+            <!-- Les avis seront injectés ici par JavaScript -->
+        </div>
+        <div class="bouton-avis">
+            <a href="frontend/avis.php" onclick="openFeedbackForm()">Raconter son expérience</a>
         </div>
     </div>
+</div>
 
-    <!-- Inclusion du fichier JavaScript -->
-    <script src="assets/show_avis.js"></script>
+<!-- Inclusion du fichier JavaScript -->
+<script src="assets/show_avis.js"></script>
+
+
+<!-- Inclusion du fichier JavaScript -->
+<script src="assets/show_avis.js"></script>
+
 
     <!-- Notification de succès -->
     <?php if ($showNotification): ?>
@@ -156,7 +159,7 @@ include_once('backend/update.php');
         <?php endif; ?>
 
     <div id="errorNotification" class="notification">
-        Vous devez vous identifié pour réserver un créneau. <a href="backend/login.php" style="color: white; text-decoration: underline;">Se connecter</a>
+        Vous devez vous identifié pour réserver un créneau. <a href="frontend/login.html" style="color: white; text-decoration: underline;">Se connecter</a>
     </div>
 
 </div>

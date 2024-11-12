@@ -35,58 +35,35 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
     <title>Mes réservations</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        /* Notification */
-        .notification {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-            transform: translateY(20px);
-        }
-
-        .notification.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .notification.hide {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .notification.error {
-            background-color: #f44336; /* Rouge pour les erreurs */
-        }
-    </style>
+    <link rel="stylesheet" href="../style/mes_reservation.css">
+    <link rel="stylesheet" href="../style/index.css">
 </head>
 <body>
+
+<nav>
+    <!-- Liens vers les réseaux sociaux à gauche -->
+    <ul class="social-links">
+        <li><a href="https://facebook.com" target="_blank"><img src="../image/facebook.png"></a></li>
+        <li><a href="https://twitter.com" target="_blank"><img src="../image/instagram.webp"></a></li>
+    </ul>
+
+    <!-- Liens de navigation à droite -->
+    <ul class="nav-links">
+        <li><a href="../index.php">Accueil</a></li>
+        <li><a href="../index.php">Contact</a></li>
+        <?php if (isset($_SESSION['username'])): ?>
+            <li><a href="mes_reservations.php">Mes réservations</a></li>
+            <li><a href="logout.php">Déconnexion</a></li>
+        <?php else: ?>
+            <li><a href="../frontend/login.html">Identification</a></li>
+            <!-- <li><a href="../connexion/signup.php">Inscription</a></li> -->
+        <?php endif; ?>
+        <li><a href="reservation.php" id="prendreRDVBtn" class="bouton-nav">Prendre rendez-vous</a></li>
+    </ul>
+
+</nav>
 
 <h1>Mes Réservations</h1>
 
@@ -140,7 +117,9 @@ $result = $stmt->get_result();
                         <form method="POST" action="annuler_reservation.php" onsubmit="return confirm('Voulez-vous vraiment annuler cette réservation ?');">
                             <input type="hidden" name="reservation_id" value="<?php echo htmlspecialchars($row['reservation_id']); ?>">
                             <input type="hidden" name="disponibilite_id" value="<?php echo htmlspecialchars($row['disponibilite_id']); ?>">
-                            <button type="submit">Annuler</button>
+                            <div class="button-container">
+                                <button type="submit">Annuler</button>
+                            </div>
                         </form>
                     </td>
                 </tr>
