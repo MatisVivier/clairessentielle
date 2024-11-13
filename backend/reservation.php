@@ -104,7 +104,7 @@ unset($_SESSION['reservation_success']);
             locale: 'fr',
             height: 'auto',
             events: {
-                url: '/clairessentielle/backend/getters/get_disponibilite.php',
+                url: 'backend/getters/get_disponibilite.php',
                 failure: function() {
                     console.error('Erreur lors du chargement des disponibilités. Vérifiez l\'URL ou la présence du fichier.');
                 }
@@ -112,8 +112,6 @@ unset($_SESSION['reservation_success']);
             dateClick: function (info) {
                 chargerHorairesDisponibles(info.dateStr);
             }
-        
-
     });
 
 
