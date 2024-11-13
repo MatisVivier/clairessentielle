@@ -100,18 +100,27 @@ unset($_SESSION['reservation_success']);
 
         // Initialisation du calendrier avec une vue plus compacte
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            locale: 'fr', // Pour le calendrier en français
-            height: 'auto', // Rendre le calendrier plus compact
-            events: 'get_disponibilite.php', // Fichier PHP qui renvoie les disponibilités sous forme d'événements
-            eventBackgroundColor: 'green', // Couleur des événements disponibles
-            eventTextColor: 'white', // Texte blanc sur fond vert
-            eventDisplay: 'background', // Afficher la couleur des événements en arrière-plan (cases colorées)
-            dateClick: function (info) {
-                // Lorsque l'utilisateur clique sur une date, on charge les créneaux disponibles
-                chargerHorairesDisponibles(info.dateStr);
-            }
-        });
+        initialView: 'dayGridMonth',
+        locale: 'fr',
+        height: 'auto',
+        events: {
+            url: 'get_disponibilite.php', // Le fichier qui renvoie les événements
+            extraParams: function() {
+                return {
+                    // Passez ici d'autres paramètres, si nécessaire
+                };
+            },
+            failure: function() {
+                alert('Erreur lors du chargement des disponibilités');
+            },
+            color: 'blue', // Choisissez la couleur que vous voulez pour l'arrière-plan
+            textColor: 'black' // Choisissez la couleur pour le texte
+        },
+        dateClick: function (info) {
+            chargerHorairesDisponibles(info.dateStr);
+        }
+    });
+
 
         calendar.render();
 

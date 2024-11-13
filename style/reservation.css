@@ -56,6 +56,11 @@ body, html:before {
     font-size: 16px;
 }
 
+.fc-daygrid-event {
+    background-color: blue !important; /* La couleur de fond souhaitée */
+    color: black !important; /* La couleur du texte souhaitée */
+}
+
 /* Barre de navigation */
 nav {
     position: fixed;
