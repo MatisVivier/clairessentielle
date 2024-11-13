@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fonction pour récupérer les avis via AJAX
     function fetchAvis() {
-        fetch('/clairessentielle/backend/getters/get_avis.php')
+        fetch('backend/getters/get_avis.php')
             .then(response => response.json())
             .then(data => {
                 avisData = data;
