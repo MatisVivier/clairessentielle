@@ -100,25 +100,20 @@ unset($_SESSION['reservation_success']);
 
         // Initialisation du calendrier avec une vue plus compacte
         var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        locale: 'fr',
-        height: 'auto',
-        events: {
-            url: 'get_disponibilite.php', // Le fichier qui renvoie les événements
-            extraParams: function() {
-                return {
-                    // Passez ici d'autres paramètres, si nécessaire
-                };
+            initialView: 'dayGridMonth',
+            locale: 'fr',
+            height: 'auto',
+            events: {
+                url: '/clairessentielle/backend/getters/get_disponibilite.php',
+                failure: function() {
+                    console.error('Erreur lors du chargement des disponibilités. Vérifiez l\'URL ou la présence du fichier.');
+                }
             },
-            failure: function() {
-                alert('Erreur lors du chargement des disponibilités');
-            },
-            color: 'blue', // Choisissez la couleur que vous voulez pour l'arrière-plan
-            textColor: 'black' // Choisissez la couleur pour le texte
-        },
-        dateClick: function (info) {
-            chargerHorairesDisponibles(info.dateStr);
-        }
+            dateClick: function (info) {
+                chargerHorairesDisponibles(info.dateStr);
+            }
+        
+
     });
 
 
