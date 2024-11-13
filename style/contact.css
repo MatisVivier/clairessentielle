@@ -1,0 +1,105 @@
+/* Styles globaux */
+body, html {
+    background-image: url('../image/fleurs.jpg'); /* Remplace par le chemin vers ton image */
+    background-size: cover; /* Couvrir tout l'écran */
+    background-position: center;
+    height: 100vh; /* Hauteur de 100% de la vue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 50%;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Superposition noire avec opacité de 40% */
+    z-index: 1;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Formulaire de contact */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Messages de succès et d'erreur */
+.message {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.message.success {
+    color: #4CAF50;
+}
+
+.message.error {
+    color: #f44336;
+}

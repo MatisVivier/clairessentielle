@@ -1,33 +1,42 @@
-<?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <title>Contactez-nous</title>
+    <link rel="stylesheet" href="../style/contact.css">
+</head>
+<body>
 
-require '../vendor/autoload.php';
+    <div class="overlay">
+        <h1>Contactez-moi</h1>
 
-$mail = new PHPMailer(true);
+        <!-- Afficher les messages de succès ou d'erreur -->
+        <?php if (isset($_SESSION['success'])): ?>
+            <p class="message success"><?php echo $_SESSION['success']; unset($_SESSION['success']); ?></p>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['error'])): ?>
+            <p class="message error"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+        <?php endif; ?>
 
-try {
-    // Configuration du serveur SMTP
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'matisvivier2004@gmail.com';
-    $mail->Password = 'votre_mot_de_passe'; // Utilisez un mot de passe d'application si l'authentification 2FA est activée
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+        <!-- Formulaire de contact -->
+        <form class="contact-form" method="POST" action="contact.php">
+            <label for="name">Nom :</label>
+            <input type="text" name="name" id="name" required>
 
-    // Expéditeur et destinataire
-    $mail->setFrom('matisvivier2004@gmail.com', $name); // Utilisez votre email Gmail ici
-    $mail->addAddress('destinataire@example.com'); // Remplacez par votre adresse email de réception
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" required>
 
-    // Contenu de l'email
-    $mail->Subject = $subject;
-    $mail->Body = "Nom: $name\nEmail: $email\n\nMessage:\n$message";
-    $mail->AltBody = "Nom: $name\nEmail: $email\n\nMessage:\n$message"; // Version texte
+            <label for="subject">Sujet :</label>
+            <input type="text" name="subject" id="subject" required>
 
-    // Envoi de l'email
-    $mail->send();
-    $_SESSION['success'] = "Votre message a été envoyé avec succès.";
-} catch (Exception $e) {
-    $_SESSION['error'] = "Erreur lors de l'envoi de l'email : " . $mail->ErrorInfo;
-}
+            <label for="message">Message :</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+
+</body>
+</html>

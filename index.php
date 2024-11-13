@@ -107,25 +107,25 @@ include_once('backend/update.php');
         <h2>Mes Services</h2>
         <div class="services-grid">
             <div class="service-card">
-                <img src="path_to_icon_1" alt="Reiki Icon">
+                <img src="image/fleurs.jpg" alt="Reiki Icon">
                 <h3>Lorem Ipsum</h3>
                 <p>Lorem ipsum dolor sit amc, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.  </p>
             </div>
 
             <div class="service-card">
-                <img src="path_to_icon_2" alt="Chakra Icon">
+                <img src="image/fleurs.jpg" alt="Chakra Icon">
                 <h3>Lorem Ipsum</h3>
                 <p>Lorem ipsum dolor sit amet, consect ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.  </p>
             </div>
 
             <div class="service-card">
-                <img src="path_to_icon_3" alt="Magnétisme Icon">
+                <img src="image/fleurs.jpg" alt="Magnétisme Icon">
                 <h3>Lorem Ipsum</h3>
                 <p>Lorem ipsum dolor sit ametng nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.  </p>
             </div>
 
             <div class="service-card">
-                <img src="path_to_icon_4" alt="Meditation Icon">
+                <img src="image/fleurs.jpg" alt="Meditation Icon">
                 <h3>Lorem Ipsum</h3>
                 <p>Lorem ipsum et, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor.  </p>
             </div>
